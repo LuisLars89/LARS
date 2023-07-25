@@ -20,6 +20,8 @@ let buttonInfo          = document.querySelector('.add-to-cart-button')
 let productosEnCarrito  = []
 let productoACarrito    = []
 
+let enlace;
+
 countCarrito.innerText = document.querySelectorAll('.shopping-cart').length
 totalCarrito.innerText = '$0.00'
 
@@ -81,46 +83,40 @@ function closeModal(){
 
 let productList = []
 productList.push({
-    name:"house",
-    price:180,
-    image:"https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    desc: 'Casa en fraccionamiento privado en excelente zona residencial con caseta de vigilancia y guardia, a 15 minutos del centro de la ciudad y muy cerca de centros comerciales y escuelas.'
+    name:"Red Bull Escala",
+    price:"350",
+    image:"./Mcia/RB22.png",
+    desc: ' Coleccionable 2022 campeón F1,'
 })
 productList.push({
-    name:"house model 2",
-    price:120,
-    image: "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    desc: 'Renta: $ 30,000\nMetros de construcción: 297m2\nMetros de Terreno: 250m2'
+    name:"Camiseta Deportiva",
+    price:"10,000",
+    image:"./Mcia/PlayeraRB.png",
+    desc: 'Camiseta deportiva de manga corta'
 })
 productList.push({
-    name:"house model 3",
-    price:200,
-    image:"https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    desc: 'Oportunidad de casa de dos plantas y con excelente ubicación, cerca de avenidas principales de la ciudad a tres minutos de la Jose María Iglesias, así como de centros comerciales, escuelas y centros de esparcimiento.'
+    name:"Mercedes Benz Escala",
+    price:"10,000",
+    image:"./Mcia/Mercedes.png",
+    desc: 'Coleccionable Mercedes Benz'
 })
 productList.push({
-    name:"house model 4",
-    price:895,
-    image:"https://images.pexels.com/photos/206172/pexels-photo-206172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    desc: 'Casa en Renta recién Remodelada en Paseo de las Misiones'
+    name:"F1-75 Monza, 100 aniversario",
+    price:"10,000",
+    image:"./Mcia/Ferrari.png",
+    desc: 'ERRARI 2017 Monza Circuit 100th Anniversary'
 })
 productList.push({
-    name:"house model 5",
-    price:1500,
-    image:"https://images.pexels.com/photos/1438832/pexels-photo-1438832.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    desc: 'Rento casa amueblada en Fraccionamiento Quintas del Sol, muy cerca de la Av. Ortíz Mena, terreno amplio, cochera con capacidad de hasta 4 carros, sala, comedor, cocina, lavandería, medio baño, recamara completa, todo en planta baja'
+    name:"Funda para Movil",
+    price:"10,000",
+    image:"./Mcia/Funda.png",
+    desc: 'iPhone 14, 13, 12, 11 Pro Max, Cup'
 })
 productList.push({
-    name:"house model 6",
-    price:100,
-    image:"https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    desc: 'Propiedad en venta o renta ubicada sobre Av. Mirador'
-})
-productList.push({
-    name:"house model 7",
-    price:3620,
-    image:"https://images.pexels.com/photos/53610/large-home-residential-house-architecture-53610.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    desc: 'Propiedad en venta o renta ubicada sobre Av. Mirador'
+    name:"Póster de arte de pared con efecto neón",
+    price:"10,000",
+    image:"./Mcia/Poster.png",
+    desc: 'Decoracion para sala de estar y dormitorio'
 })
 
 function renderListProduct(productList){
@@ -188,6 +184,8 @@ function agregarCarrito(producto){
     /* Se agrega contenido a cada uno de los elementos */
     divShoppingCart.classList.add('shopping-cart')
     imgfigureShoppingCart.setAttribute('src', producto[0].image)
+    enlace=producto[0].image
+    
     pnameShoppingCart.innerText = producto[0].name
     ppriceShoppingCart.innerText ='$' + producto[0].price
     imgcloseShoppingCart.setAttribute('src','./icons/icon_close.png')
@@ -214,6 +212,8 @@ function agregarCarrito(producto){
         productosEnCarrito.splice(productosEnCarrito.indexOf(producto[0].name),1)
     }) 
 
+ return enlace;
+
 }
 
 function mostrarInfoProduct(imagen, precio, nombre, descripcion){
@@ -230,3 +230,55 @@ function mostrarInfoProduct(imagen, precio, nombre, descripcion){
 }
 
 renderListProduct(productList);
+
+
+
+
+//PDF GENERATOR A PARTIR DE AQUI 
+
+ // <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+
+  
+  function generatePDF1() {
+  
+  
+    // Create a new PDF document
+    var pdf = new jsPDF();
+  
+    // Add a page to the document
+    //pdf.addPage();
+  
+    // Write the name to the page
+    pdf.text("$s", 100, 100);
+  
+    // Save the PDF document
+    pdf.save("my-pdf.pdf");
+  }
+  
+
+  function generatePDF() {
+    // Create a new PDF document
+    var pdf = new jsPDF();
+  
+    // Load the image (assuming 'enlace' contains the URL of the image)
+    var img = new Image();
+    img.src = enlace; // 'enlace' should be the URL of the image you want to print
+  
+    // Wait for the image to load
+    img.onload = function () {
+      // Set the position and size of the image on the page
+      var x = 50; // X coordinate of the image
+      var y = 50; // Y coordinate of the image
+      var width = 100; // Width of the image
+      var height = 100; // Height of the image
+  
+      // Draw the image on the PDF document
+      pdf.addImage(img, 'JPEG', x, y, width, height);
+  
+      // Write the name to the page
+      pdf.text("Your text here", 100, 100);
+  
+      // Save the PDF document
+      pdf.save("my-pdf.pdf");
+    };
+  }

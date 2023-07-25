@@ -23,6 +23,7 @@
     "glob": "^7.2.3",
     "globby": "^6.1.0",
     "graceful-fs": "^4.2.11",
+    "html-pdf": "^3.0.1",
     "inflight": "^1.0.6",
     "inherits": "^2.0.4",
     "jsonfile": "^4.0.0",

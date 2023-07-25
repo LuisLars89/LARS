@@ -1,0 +1,106 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>PDF Generator</title>
+</head>
+<body>
+
+<input type="text" id="name" placeholder="Enter your name">
+<input type="button" value="Generate PDF" onclick="generatePDF()">
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+
+<script>
+function generatePDF() {
+  // Get the name from the input field
+  var name = document.getElementById("name").value;
+
+  // Create a new PDF document
+  var pdf = new jsPDF();
+
+  // Add a page to the document
+  //pdf.addPage();
+
+  // Write the name to the page
+  pdf.text(name, 100, 100);
+
+  // Save the PDF document
+  pdf.save("my-pdf.pdf");
+}
+</script>
+
+</body>
+</html> 
+
+
+
+
+
+
+
+
+
+<!-- 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear PDF con html2pdf.js</title>
+    <style>
+        img {
+            max-height: 250px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+</head>
+<body>
+    <h1>Creando PDF con html2pdf.js</h1>
+    <a href="https://parzibyte.me/blog">By Parzibyte</a>
+    <p>Soy HTML que será convertido a un PDF</p>
+    <p>El valor pasado por Node es: Soy un valor pasado desde JavaScript</p>
+    <pre>
+        <code>
+            const saludo = "Hola mundo";
+        </code>
+    </pre>
+    <p>También puedes usar imágenes de internet:</p>
+    <img src="https://github.com/parzibyte.png" alt="Imagen de Parzibyte">
+    <p>O imágenes locales:</p>
+    <img src="file:///C:/Users/parzibyte/Documents/desarrollo/node/crear-pdf/abeja.jpg" alt="Imagen de una abeja">
+
+    <script>
+        const valorPasadoPorNode = "Soy un valor pasado desde JavaScriptSS";
+        const contenidoHtml = `
+            <h1>Creando PDF con html2pdf.js</h1>
+            <a href="https://parzibyte.me/blog">By Parzibyte</a>
+            <p>Soy HTML que será convertido a un PDF</p>
+            <p>El valor pasado por Node es: ${valorPasadoPorNode}</p>
+            <pre>
+                <code>
+                    const saludo = "Hola mundo";
+                </code>
+            </pre>
+            <p>También puedes usar imágenes de internet:</p>
+            <img src="https://github.com/parzibyte.png" alt="Imagen de Parzibyte">
+            <p>O imágenes locales:</p>
+            <img src="file:///C:/Users/parzibyte/Documents/desarrollo/node/crear-pdf/abeja.jpg" alt="Imagen de una abeja">
+        `;
+        
+        const generarPDF = async () => {
+            const { html2pdf } = window;
+            const pdfDocumento = await html2pdf().from(contenidoHtml).outputPdf();
+            const blob = new Blob([pdfDocumento], { type: "application/pdf" });
+            const url = URL.createObjectURL(blob);
+            window.open(url, '_blank'); // Abrir en nueva ventana
+            URL.revokeObjectURL(url);
+            console.log("PDF creado correctamente");
+        };
+        
+        generarPDF();
+    </script>
+</body>
+</html> -->
