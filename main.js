@@ -286,6 +286,10 @@ renderListProduct(productList);
     var logo = new Image();
     logo.src = "./logos/BigLogo.png" // 'enlace' should be the URL of the image you want to print
 
+    var pagos = new Image();
+    pagos.src = "./icons/Pagos.png" // 'enlace' should be the URL of the image you want to print
+
+    
     // Wait for the image to load
     img.onload = function () {
       // Set the position and size of the image on the page
@@ -306,17 +310,19 @@ renderListProduct(productList);
 
       pdf.addImage(logo, 'JPEG', xLogo, yLogo);
       pdf.addImage(img, 'JPEG', x, y, width, height);
+      pdf.addImage(pagos, 'JPEG', 10, 180);
+
 
       // Write the name to the page
-      pdf.text(nombre+ ":$ "+precio, 30, 150);
+      pdf.text(nombre+ ":$ "+precio, 14, 150);
       //pdf.text("$"+precio, 64, 145);
-       pdf.text(descripsion, 30, 160);   
+       pdf.text(descripsion, 14, 160);   
       
       
-      pdf.text("CUENTA: ", 10, 180);
-      pdf.text("PAGO OXXO: ", 10, 189);  
-      pdf.text("Reenviar Comprobante de pago a : ", 10, 199);  
-      pdf.text("Incluir Datos Para envio:(Nombre, direccion, telefono)", 10, 215);  
+      //pdf.text("CUENTA: ", 10, 180);
+      //pdf.text("PAGO OXXO: ", 10, 189);  
+      pdf.text("Reenviar Comprobante de pago a : ", 10, 235);  
+      pdf.text("Incluir Datos Para envio:(Nombre, direccion, telefono)", 10, 245);  
      
 
       // Save the PDF document
