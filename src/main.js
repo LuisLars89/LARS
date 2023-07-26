@@ -23,6 +23,8 @@ let productoACarrito    = []
 let enlace;
 let nombre;
 let precio;
+let descripsion;
+
 
 countCarrito.innerText = document.querySelectorAll('.shopping-cart').length
 totalCarrito.innerText = '$0.00'
@@ -153,6 +155,7 @@ function renderListProduct(productList){
         imgproductcard.addEventListener('click', function(){
             mostrarInfoProduct(product.image, product.price, product.name, product.desc)
             openProductDetail()
+            
         });
 
 
@@ -161,7 +164,8 @@ function renderListProduct(productList){
             productoAgregado.push({
                 name: product.name,
                 price: product.price,
-                image: product.image
+                image: product.image,
+                desc: product.desc
             })
             agregarCarrito(productoAgregado)
         })
@@ -192,6 +196,10 @@ function agregarCarrito(producto){
     nombre=producto[0].name
     ppriceShoppingCart.innerText ='$' + producto[0].price
     precio = producto[0].price
+    descripsion = producto[0].desc
+    console.log (descripsion)
+
+
     imgcloseShoppingCart.setAttribute('src','./icons/icon_close.png')
     imgcloseShoppingCart.classList.add('removeList')
 
@@ -219,9 +227,10 @@ function agregarCarrito(producto){
         
         totalCarrito.innerText = '$' + (parseFloat(totalCarrito.innerText.substring(1)) - parseFloat(producto[0].price))
         productosEnCarrito.splice(productosEnCarrito.indexOf(producto[0].name),1)
+        
     }) 
 
- return enlace;
+ 
 
 }
 
@@ -235,6 +244,7 @@ function mostrarInfoProduct(imagen, precio, nombre, descripcion){
         name: nombre,
         price: precio,
         image: imagen
+       
     })
 }
 
@@ -279,28 +289,35 @@ renderListProduct(productList);
     // Wait for the image to load
     img.onload = function () {
       // Set the position and size of the image on the page
-      var x = 1; // X coordinate of the image
-      var y = 50; // Y coordinate of the image
+      var x = 50; // X coordinate of the image
+      var y = 60; // Y coordinate of the image
       var width = 80; // Width of the image
       var height = 80; // Height of the image
         
       var xLogo = 1; // X coordinate of the logo (adjust this to position the logo)
-      var yLogo = 20; // Y coordinate of the logo (adjust this to position the logo)
+      var yLogo = 10; // Y coordinate of the logo (adjust this to position the logo)
       
         
 
 
       // Draw the image on the PDF document
-      pdf.addImage(img, 'JPEG', x, y, width, height);
-      pdf.addImage(logo, 'JPEG', xLogo, yLogo);
-  
-      // Write the name to the page
-      pdf.text(nombre, 90, 80);
-      pdf.text("$"+precio, 90, 100);
-      pdf.text("CUENTA: ", 10, 150);
-      pdf.text("PAGO OXXO: ", 10, 160);  
+      pdf.text("GRACIAS POR SU COMPRA: ", 47, 40);  
+      pdf.text("(Datos para realizar pago de su compra) ", 35, 50);    
 
-      pdf.text("Reenviar Comprobante de pago a : ", 10, 180);  
+      pdf.addImage(logo, 'JPEG', xLogo, yLogo);
+      pdf.addImage(img, 'JPEG', x, y, width, height);
+
+      // Write the name to the page
+      pdf.text(nombre+ ":$ "+precio, 49, 150);
+      //pdf.text("$"+precio, 64, 145);
+       pdf.text(descripsion, 50, 160);   
+      
+      
+      pdf.text("CUENTA: ", 10, 180);
+      pdf.text("PAGO OXXO: ", 10, 189);  
+      pdf.text("Reenviar Comprobante de pago a : ", 10, 199);  
+      pdf.text("Incluir Datos Para envio:(Nombre, direccion, telefono)", 10, 215);  
+     
 
       // Save the PDF document
       pdf.save("my-pdf.pdf");
