@@ -279,12 +279,12 @@ renderListProduct(productList);
     // Wait for the image to load
     img.onload = function () {
       // Set the position and size of the image on the page
-      var x = 20; // X coordinate of the image
+      var x = 5; // X coordinate of the image
       var y = 50; // Y coordinate of the image
       var width = 80; // Width of the image
       var height = 80; // Height of the image
         
-      var xLogo = 20; // X coordinate of the logo (adjust this to position the logo)
+      var xLogo = 5; // X coordinate of the logo (adjust this to position the logo)
       var yLogo = 20; // Y coordinate of the logo (adjust this to position the logo)
       
         
@@ -295,12 +295,12 @@ renderListProduct(productList);
       pdf.addImage(logo, 'JPEG', xLogo, yLogo);
   
       // Write the name to the page
-      pdf.text(nombre, 100, 80);
-      pdf.text("$"+precio, 100, 100);
-      pdf.text("CUENTA: ", 20, 150);
-      pdf.text("PAGO OXXO: ", 20, 160);  
+      pdf.text(nombre, 90, 80);
+      pdf.text("$"+precio, 90, 100);
+      pdf.text("CUENTA: ", 10, 150);
+      pdf.text("PAGO OXXO: ", 10, 160);  
 
-      pdf.text("Reenviar Comprobante de pago a : ", 20, 180);  
+      pdf.text("Reenviar Comprobante de pago a : ", 10, 180);  
 
       // Save the PDF document
       pdf.save("my-pdf.pdf");
