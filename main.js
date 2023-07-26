@@ -289,7 +289,7 @@ renderListProduct(productList);
     // Wait for the image to load
     img.onload = function () {
       // Set the position and size of the image on the page
-      var x = 45; // X coordinate of the image
+      var x = 30; // X coordinate of the image
       var y = 60; // Y coordinate of the image
       var width = 80; // Width of the image
       var height = 80; // Height of the image
@@ -301,16 +301,16 @@ renderListProduct(productList);
 
 
       // Draw the image on the PDF document
-      pdf.text("GRACIAS POR SU COMPRA: ", 43, 40);  
-      pdf.text("(Datos para realizar pago de su compra) ", 31, 50);    
+      pdf.text("GRACIAS POR SU COMPRA: ", 30, 40);  
+      pdf.text("(Datos para realizar pago de su compra) ", 30, 50);    
 
       pdf.addImage(logo, 'JPEG', xLogo, yLogo);
       pdf.addImage(img, 'JPEG', x, y, width, height);
 
       // Write the name to the page
-      pdf.text(nombre+ ":$ "+precio, 45, 150);
+      pdf.text(nombre+ ":$ "+precio, 30, 150);
       //pdf.text("$"+precio, 64, 145);
-       pdf.text(descripsion, 44, 160);   
+       pdf.text(descripsion, 30, 160);   
       
       
       pdf.text("CUENTA: ", 10, 180);
