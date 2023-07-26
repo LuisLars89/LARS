@@ -279,12 +279,12 @@ renderListProduct(productList);
     // Wait for the image to load
     img.onload = function () {
       // Set the position and size of the image on the page
-      var x = 5; // X coordinate of the image
+      var x = 1; // X coordinate of the image
       var y = 50; // Y coordinate of the image
       var width = 80; // Width of the image
       var height = 80; // Height of the image
         
-      var xLogo = 5; // X coordinate of the logo (adjust this to position the logo)
+      var xLogo = 1; // X coordinate of the logo (adjust this to position the logo)
       var yLogo = 20; // Y coordinate of the logo (adjust this to position the logo)
       
         
