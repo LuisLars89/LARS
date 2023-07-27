@@ -26,6 +26,23 @@ let precio;
 let descripsion;
 
 
+
+
+  
+
+
+
+
+function toggleMenuMobile(){
+    productDetailLeft.classList.add('inactive')
+    asideShopping.classList.add('inactive');
+    mobileMenu.classList.toggle('inactive')
+    
+}
+
+
+
+
 countCarrito.innerText = document.querySelectorAll('.shopping-cart').length
 totalCarrito.innerText = '$0.00'
 
@@ -35,6 +52,8 @@ iconShopping.addEventListener('click', toggleAsideShopping)
 productDetailClose.addEventListener('click',closeProductDetail)
 buttonInfo.addEventListener('click', butonClick)
 cerrarModal.addEventListener('click', closeModal)
+
+
 
 
 function butonClick(){
