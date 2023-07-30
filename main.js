@@ -107,37 +107,37 @@ function closeModal(){
 let productList = []
 productList.push({
     name:"Red Bull Escala",
-    price:"350",
+    price:"320",
     image:"./Mcia/RB22.png",
     desc: ' Coleccionable 2022 campeón F1,'
 })
 productList.push({
     name:"Camiseta Deportiva",
-    price:"10,000",
+    price:"259",
     image:"./Mcia/PlayeraRB.png",
     desc: 'Camiseta deportiva de manga corta'
 })
 productList.push({
     name:"Mercedes Benz Escala",
-    price:"10,000",
+    price:"420",
     image:"./Mcia/Mercedes.png",
     desc: 'Coleccionable Mercedes Benz'
 })
 productList.push({
-    name:"F1-75 Monza, 100 aniversario",
-    price:"960.79",
-    image:"./Mcia/Ferrari.png",
-    desc: 'ERRARI 2017 Monza Circuit 100th Anniversary'
+    name:" Lampara 3D F1",
+    price:"320",
+    image:"./Mcia/Lampara.png",
+    desc: 'Decoracion para la Havitacion'
 })
 productList.push({
     name:"Funda para Movil",
-    price:"2000",
+    price:"159",
     image:"./Mcia/Funda.png",
     desc: 'iPhone 14, 13, 12, 11 Pro Max, Cup'
 })
 productList.push({
     name:"Póster de arte de pared con efecto neón",
-    price:"10,000",
+    price:"299",
     image:"./Mcia/Poster.png",
     desc: 'Decoracion para sala de estar y dormitorio'
 })
