@@ -13,9 +13,25 @@ let totalCarrito        = document.querySelector('.total')
 let modal               = document.querySelector('.modal')
 let cerrarModal         = document.querySelector('.boton-modal')
 let productImageInfor   = document.querySelector('.product-detail-left > img:nth-child(2)')
-let labelPriceInfo      = document.querySelector('.product-info-left p:nth-child(1)')
-let labelNameInfo       = document.querySelector('.product-info-left p:nth-child(2)')
+let productImage2Infor   = document.querySelector('.product-detail-left > img:nth-child(3)')
+
+
+
+let labelNameInfo       = document.querySelector('.product-info-left p:nth-child(1)')
+let labelPriceInfo      = document.querySelector('.product-info-left p:nth-child(2)')
 let labelInforInfo      = document.querySelector('.product-info-left p:nth-child(3)')
+// productImageInfor.setAttribute('src', imagen)
+// productImage2Infor.setAttribute('src', imagen2)
+// labelPriceInfo.innerText = '$' + precio
+// labelNameInfo.innerText = nombre
+// labelInforInfo.innerText = descripcion
+// productoACarrito = []
+// productoACarrito.push({
+//     name: nombre,
+//     price: precio,
+//     image: imagen
+
+
 let buttonInfo          = document.querySelector('.add-to-cart-button')
 let productosEnCarrito  = []
 let productoACarrito    = []
@@ -27,9 +43,26 @@ let descripsion;
 
 
 
+  
+//lazy
 
+const observerOptions = {
+    root: null, // The viewport as the root
+    rootMargin: '0px',
+    threshold: 0.1 // The threshold at which to trigger the callback
+  };
+
+  let observer = new IntersectionObserver(function(entries) {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        // La imagen ahora es visible, así que cárgala
+        entry.target.src = entry.target.dataset.src;
+      }
+    }
+  }, observerOptions);
   
 
+//lazy
 
 
 
@@ -86,6 +119,15 @@ function openProductDetail(){
     productDetailLeft.classList.remove('inactive')
 }
 
+function openProductDetail2(){
+    asideShopping.classList.add('inactive');
+    mobileMenu.classList.add('inactive');
+    desktopMenu.classList.add('inactive');
+    productDetailLeft.classList.remove('inactive')
+}
+
+
+
 function closeProductDetail(){
     productoACarrito = []
     asideShopping.classList.add('inactive');
@@ -109,43 +151,243 @@ productList.push({
     name:"Red Bull Escala",
     price:"320",
     image:"./Mcia/RB22.png",
+    image2:"./Mcia/Lampara.png",
     desc: ' Coleccionable 2022 campeón F1,'
 })
 productList.push({
     name:"Camiseta Deportiva",
     price:"259",
     image:"./Mcia/PlayeraRB.png",
+    image2:"./Mcia/Lampara.png",
     desc: 'Camiseta deportiva de manga corta'
 })
 productList.push({
     name:"Mercedes Benz Escala",
     price:"420",
     image:"./Mcia/Mercedes.png",
+    image2:"./Mcia/Lampara.png",
     desc: 'Coleccionable Mercedes Benz'
 })
 productList.push({
     name:" Lampara 3D F1",
     price:"320",
     image:"./Mcia/Lampara.png",
+    image2:"./Mcia/Lampara.png",
     desc: 'Decoracion para la Havitacion'
 })
 productList.push({
     name:"Funda para Movil",
     price:"159",
     image:"./Mcia/Funda.png",
+    image2:"./Mcia/Lampara.png",
+    image2:"./Mcia/Lampara.png",
     desc: 'iPhone 14, 13, 12, 11 Pro Max, Cup'
 })
 productList.push({
     name:"Póster de arte de pared con efecto neón",
     price:"299",
     image:"./Mcia/Poster.png",
+    image2:"./Mcia/Lampara.png",
     desc: 'Decoracion para sala de estar y dormitorio'
 })
 
+
+//lazy
+productList.push({
+    name:"Red Bull Escala",
+    price:"320",
+    image:"./Mcia/RB22.png",
+    image2:"./Mcia/Lampara.png",
+    desc: ' Coleccionable 2022 campeón F1,'
+})
+productList.push({
+    name:"Camiseta Deportiva",
+    price:"259",
+    image:"./Mcia/PlayeraRB.png",
+    image2:"./Mcia/Lampara.png",
+    desc: 'Camiseta deportiva de manga corta'
+})
+productList.push({
+    name:"Mercedes Benz Escala",
+    price:"420",
+    image:"./Mcia/Mercedes.png",
+    image2:"./Mcia/Lampara.png",
+    desc: 'Coleccionable Mercedes Benz'
+})
+productList.push({
+    name:" Lampara 3D F1",
+    price:"320",
+    image:"./Mcia/Lampara.png",
+    image2:"./Mcia/Lampara.png",
+    desc: 'Decoracion para la Havitacion'
+})
+productList.push({
+    name:"Funda para Movil",
+    price:"159",
+    image:"./Mcia/Funda.png",
+    image2:"./Mcia/Lampara.png",
+    desc: 'iPhone 14, 13, 12, 11 Pro Max, Cup'
+})
+productList.push({
+    name:"Póster de arte de pared con efecto neón",
+    price:"299",
+    image:"./Mcia/Poster.png",
+    image2:"./Mcia/Lampara.png",
+    desc: 'Decoracion para sala de estar y dormitorio'
+})
+
+productList.push({
+    name:"Red Bull Escala",
+    price:"320",
+    image:"./Mcia/RB22.png",
+    image2:"./Mcia/Lampara.png",
+    desc: ' Coleccionable 2022 campeón F1,'
+})
+productList.push({
+    name:"Camiseta Deportiva",
+    price:"259",
+    image:"./Mcia/PlayeraRB.png",
+    image2:"./Mcia/Lampara.png",
+    desc: 'Camiseta deportiva de manga corta'
+})
+productList.push({
+    name:"Mercedes Benz Escala",
+    price:"420",
+    image:"./Mcia/Mercedes.png",
+    image2:"./Mcia/Lampara.png",
+    desc: 'Coleccionable Mercedes Benz'
+})
+productList.push({
+    name:" Lampara 3D F1",
+    price:"320",
+    image:"./Mcia/Lampara.png",
+    image2:"./Mcia/Lampara.png",
+    desc: 'Decoracion para la Havitacion'
+})
+productList.push({
+    name:"Funda para Movil",
+    price:"159",
+    image:"./Mcia/Funda.png",
+    image2:"./Mcia/Lampara.png",
+    desc: 'iPhone 14, 13, 12, 11 Pro Max, Cup'
+})
+productList.push({
+    name:"Póster de arte de pared con efecto neón",
+    price:"299",
+    image:"./Mcia/Poster.png",
+    image2:"./Mcia/Lampara.png",
+    desc: 'Decoracion para sala de estar y dormitorio'
+})
+
+productList.push({
+    name:"Red Bull Escala",
+    price:"320",
+    image:"./Mcia/RB22.png",
+    image2:"./Mcia/Lampara.png",
+    desc: ' Coleccionable 2022 campeón F1,'
+})
+productList.push({
+    name:"Camiseta Deportiva",
+    price:"259",
+    image:"./Mcia/PlayeraRB.png",
+    image2:"./Mcia/Lampara.png",
+    desc: 'Camiseta deportiva de manga corta'
+})
+productList.push({
+    name:"Mercedes Benz Escala",
+    price:"420",
+    image:"./Mcia/Mercedes.png",
+    image2:"./Mcia/Lampara.png",
+    desc: 'Coleccionable Mercedes Benz'
+})
+productList.push({
+    name:" Lampara 3D F1",
+    price:"320",
+    image:"./Mcia/Lampara.png",
+    image2:"./Mcia/Lampara.png",
+    desc: 'Decoracion para la Havitacion'
+})
+productList.push({
+    name:"Funda para Movil",
+    price:"159",
+    image:"./Mcia/Funda.png",
+    image2:"./Mcia/Lampara.png",
+    desc: 'iPhone 14, 13, 12, 11 Pro Max, Cup'
+})
+productList.push({
+    name:"Póster de arte de pared con efecto neón",
+    price:"299",
+    image:"./Mcia/Poster.png",
+    image2:"./Mcia/Lampara.png",
+    desc: 'Decoracion para sala de estar y dormitorio'
+})
+
+productList.push({
+    name:"Red Bull Escala",
+    price:"320",
+    image:"./Mcia/RB22.png",
+    image2:"./Mcia/Lampara.png",
+    desc: ' Coleccionable 2022 campeón F1,'
+})
+productList.push({
+    name:"Camiseta Deportiva",
+    price:"259",
+    image:"./Mcia/PlayeraRB.png",
+    image2:"./Mcia/Lampara.png",
+    desc: 'Camiseta deportiva de manga corta'
+})
+productList.push({
+    name:"Mercedes Benz Escala",
+    price:"420",
+    image:"./Mcia/Mercedes.png",
+    image2:"./Mcia/Lampara.png",
+    desc: 'Coleccionable Mercedes Benz'
+})
+productList.push({
+    name:" Lampara 3D F1",
+    price:"320",
+    image:"./Mcia/Lampara.png",
+    image2:"./Mcia/Lampara.png",
+    desc: 'Decoracion para la Havitacion'
+})
+productList.push({
+    name:"Funda para Movil",
+    price:"159",
+    image:"./Mcia/Funda.png",
+    image2:"./Mcia/Lampara.png",
+    desc: 'iPhone 14, 13, 12, 11 Pro Max, Cup'
+})
+productList.push({
+    name:"Póster de arte de pared con efecto neón",
+    price:"299",
+    image:"./Mcia/Ferrari.png",
+    image2:"./Mcia/Lampara.png",
+    desc: 'Decoracion para sala de estar y dormitorio'
+})
+
+
+
+//LAZY
+
+
+
+
 function renderListProduct(productList){
     for (const product of productList) {
+
+        //carrusel
+        let btnNext = document.createElement('button')
+        let btnPrev= document.createElement('button')
+        
+        
+        //carrusel
+        
+        
+
+
         let divproductCard = document.createElement('div')
-        let imgproductcard = document.createElement('img')
+        let  imgproductcard = document.createElement('img')
+        let  imgproductcard2 = document.createElement('img')
         let divproductinfo = document.createElement('div')
         let divdivproductinfo = document.createElement('div')
         let pprice = document.createElement('p')
@@ -154,11 +396,29 @@ function renderListProduct(productList){
         let imgproductinfo = document.createElement('img')
         divproductCard.classList.add('product-card')
         imgproductcard.setAttribute('src', product.image)
+        imgproductcard2.setAttribute('src', product.image2)
         divproductinfo.classList.add('product-info')
         pprice.innerText ='$' + product.price
         pname.innerText = product.name
         imgproductinfo.setAttribute('src', './icons/bt_add_to_cart.svg')
         
+       //LAZY
+        imgproductcard.classList.add('lazy-loading-image');
+        
+        //carrusel
+        divproductCard.classList.add('image-container')
+        
+        //carrusel
+
+
+        //imgproductcard.classList.add('bloqueo'); 
+       imgproductcard2.classList.add('bloqueo')
+
+        imgproductcard2.classList.add('lazy-loading-image'); // Agregar clase para identificar las imágenes para "lazy loading"
+        imgproductcard.setAttribute('data-src', product.image); // Agregar el atributo "data-src" con la URL de la imagen
+        imgproductcard2.setAttribute('data-src', product.image2); // Agregar el atributo "data-src" con la URL de la imagen
+        //LAZY
+
         figureproductinfo.appendChild(imgproductinfo)
         divdivproductinfo.appendChild(pprice)
         divdivproductinfo.appendChild(pname)
@@ -166,16 +426,64 @@ function renderListProduct(productList){
         divproductinfo.appendChild(divdivproductinfo)
         divproductinfo.appendChild(figureproductinfo)
 
+        //Carrusel
+        btnPrev.textContent ="<" // Reemplaza 'Anterior' con el texto que desees mostrar en el botón
+        btnNext.textContent =">" // Reemplaza 'Anterior' con el texto que desees mostrar en el botón
+        divproductCard.appendChild(btnNext)
+        divproductCard.appendChild(btnPrev)
+        
+        btnPrev.classList.add('buttonsSlide');
+        btnPrev.classList.add('prev-button'); // Agregar clase para identificar las imágenes para "lazy loading"
+        btnNext.classList.add('buttonsSlide');
+        btnNext.classList.add('next-button');
+        //Carrusel
+
+
         divproductCard.appendChild(imgproductcard)
+        divproductCard.appendChild(imgproductcard2)
         divproductCard.appendChild(divproductinfo)
 
         divcardscontainer.appendChild(divproductCard)
 
-        imgproductcard.addEventListener('click', function(){
-            mostrarInfoProduct(product.image, product.price, product.name, product.desc)
-            openProductDetail()
+        btnNext.addEventListener('click', function(){
             
+            imgproductcard.classList.add('bloqueo') ;
+            imgproductcard2.classList.remove('bloqueo');
+           
+
         });
+
+        btnPrev.addEventListener('click', function(){
+            
+            imgproductcard2.classList.add('bloqueo') ;
+            imgproductcard.classList.remove('bloqueo');
+           
+
+        });
+
+        imgproductcard.addEventListener('click', function(){
+            mostrarInfoProduct(product.image, product.image2, product.price, product.name, product.desc)
+            productImage2Infor.classList.add('bloqueo');
+            productImageInfor.classList.remove('bloqueo');
+            openProductDetail()
+
+            
+
+        });
+
+        imgproductcard2.addEventListener('click', function(){
+            productImageInfor.classList.add('bloqueo');
+            productImage2Infor.classList.remove('bloqueo');
+
+            mostrarInfoProduct(product.image, product.image2, product.price, product.name, product.desc)
+            openProductDetail()
+
+        
+
+        });
+
+
+
 
 
         imgproductinfo.addEventListener('click', function(){
@@ -251,21 +559,58 @@ function agregarCarrito(producto){
 
  
 
+
+
+
 }
 
-function mostrarInfoProduct(imagen, precio, nombre, descripcion){
+
+function mostrarInfoProduct(imagen, imagen2, precio, nombre, descripsion){
+    
+   
+
     productImageInfor.setAttribute('src', imagen)
-    labelPriceInfo.innerText = '$' + precio
+    productImage2Infor.setAttribute('src', imagen2)
+    labelPriceInfo.innerText = "$" +  precio 
     labelNameInfo.innerText = nombre
-    labelInforInfo.innerText = descripcion
+    labelInforInfo.innerText = descripsion
     productoACarrito = []
     productoACarrito.push({
-        name: nombre,
+        
         price: precio,
-        image: imagen
+        name: nombre,
+        image: imagen,
+        desc: descripsion
+
+        
        
     })
 }
+
+
+
+// function mostrarInfoProduct
+// (imagen, imagen2, precio, nombre, descripcion){
+//     productImageInfor.setAttribute('src', imagen)
+// //    productImage2Infor.setAttribute('src', imagen2)
+//     labelPriceInfo.innerText = '$' + precio
+//     labelNameInfo.innerText = nombre
+//     labelInforInfo.innerText = descripcion
+//     productoACarrito = []
+//     productoACarrito.push({
+//         name: nombre,
+//         price: precio,
+//         image: imagen,
+//         image2: imagen2,
+//         desc: nombre
+//     })
+
+//     // name:" Lampara 3D F1",
+//     // price:"320",
+//     // image:"./Mcia/Lampara.png",
+//     // image2:"./Mcia/Lampara.png",
+//     // desc: 'Decoracion para la Havitacion'
+// }
 
 renderListProduct(productList);
 
@@ -348,3 +693,18 @@ renderListProduct(productList);
       pdf.save("my-pdf.pdf");
     };
   }
+
+
+  //LAZY
+  const accion = (entry) => {
+    const nodo = entry.target;
+    observer.unobserve(nodo);
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const lazyImages = document.querySelectorAll('.lazy-loading-image');
+    lazyImages.forEach((img) => observer.observe(img));
+  });
+
+
+  //LAZY
