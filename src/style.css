@@ -33,6 +33,12 @@
   .logo {
     width: 100px;
   }
+
+/* //LARS
+//LARS */
+
+
+
   .navbar-left ul,
   .navbar-right ul {
     list-style: none;
@@ -69,10 +75,12 @@
     cursor: pointer;
   }
   .navbar-shopping-cart {
+    
     position: relative;
     cursor: pointer;
   }
   .navbar-shopping-cart div {
+    
     width: 16px;
     height: 16px;
     background-color: var(--hospital-green);
@@ -88,6 +96,7 @@
   }
 
   .desktop-menu {
+    z-index: 3;
     position: absolute;
     background-color: var(--white);
     top: 60px;
@@ -127,6 +136,7 @@
   }
 
   .mobile-menu {
+    z-index: 3;
     width: calc(100% - 24px);
     height: 100%;
     background-color: var(--white);
@@ -164,6 +174,7 @@
   }
 
   .product-detail {
+    z-index: 3;
     width: 360px;
     
     padding: 0 0 15px 24px;
@@ -312,6 +323,8 @@
 
 
   .product-detail-left {
+    z-index: 2;
+    
     width: 360px;
     padding-bottom: 24px;
     position: absolute;
@@ -461,4 +474,157 @@
 
   /* LARS STYLES */
 
+  .lazy-loading-image{
+    border-color:black ;
+  }
+
   
+  /* div transitable */
+  
+ .bloqueo{
+
+
+display: none;
+ }
+
+
+ /* Estilos generales para el contenedor de la imagen */
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Estilos para la imagen */
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  
+}
+
+/* Estilos para los botones de prev y next */
+.image-container button {
+  /* //PRIMER DISEÑO
+  
+  position: absolute;
+  top: 39%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: blue;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+
+  //END FIRST */
+
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  background-color: rgba(0, 0, 0, 0.5); /* Color de fondo del botón */
+  color: #fff; /* Color del texto del botón */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+
+}
+
+
+.image-container button:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Color de fondo del botón al pasar el mouse */
+  
+  /* opacity: 0.8; */
+}
+
+.buttonsSlide {
+  /* position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: blue;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease; */
+
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  background-color: rgba(0, 0, 0, 0.5); /* Color de fondo del botón */
+  color: #fff; /* Color del texto del botón */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+}
+
+
+
+.buttonsSlide:hover {
+  /* position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.2s ease; */
+
+  background-color: rgba(0, 0, 0, 0.8); /* Color de fondo del botón al pasar el mouse */
+
+}
+
+
+
+
+/* Estilos para el botón prev (izquierda) */
+.prev-button {
+  left: 10px;
+  
+}
+
+/* Estilos para el botón next (derecha) */
+.next-button {
+  right: 10px;
+  
+}
+
+
+/* ESTILOS FLECHAS */
+
+/* Estilos generales para el contenedor del carrusel */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* Ancho máximo del carrusel */
+  margin: 0 auto;
+}
+
+/* Estilos para la imagen */
+.carousel-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Estilos para los botones de prev y next */
+.carousel-container button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  background-color: rgba(0, 0, 0, 0.5); /* Color de fondo del botón */
+  color: #fff; /* Color del texto del botón */
+  border: none;
+  padding: 15px 25px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.carousel-container button:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Color de fondo del botón al pasar el mouse */
+}
+
