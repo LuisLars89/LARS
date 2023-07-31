@@ -113,6 +113,13 @@ function toggleAsideShopping(){
 }
 
 function openProductDetail(){
+    // Scroll to the top of the page
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Use smooth scrolling for a nicer effect
+      });
+    //END SCROLL
+
     asideShopping.classList.add('inactive');
     mobileMenu.classList.add('inactive');
     desktopMenu.classList.add('inactive');
@@ -477,12 +484,22 @@ function renderListProduct(productList){
 
             mostrarInfoProduct(product.image, product.image2, product.price, product.name, product.desc)
             openProductDetail()
+            
 
         
 
         });
 
+        // ScrollTop 
+        function scrollToTop() {
+            // Scroll to the top of the page
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth' // Use smooth scrolling for a nicer effect
+            });
+          }
 
+          //Scroll
 
 
 
