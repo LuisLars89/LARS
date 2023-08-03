@@ -1,3 +1,4 @@
+
 let emailMenu           = document.querySelector('.navbar-email');
 let desktopMenu         = document.querySelector('.desktop-menu');
 let iconMenuMobile      = document.querySelector('.menu');
@@ -17,6 +18,7 @@ let productImage2Infor   = document.querySelector('.product-detail-left > img:nt
 
 
 
+
 let labelNameInfo       = document.querySelector('.product-info-left p:nth-child(1)')
 let labelPriceInfo      = document.querySelector('.product-info-left p:nth-child(2)')
 let labelInforInfo      = document.querySelector('.product-info-left p:nth-child(3)')
@@ -32,6 +34,12 @@ let labelInforInfo      = document.querySelector('.product-info-left p:nth-child
 //     image: imagen
 
 
+
+
+
+
+
+
 let buttonInfo          = document.querySelector('.add-to-cart-button')
 let productosEnCarrito  = []
 let productoACarrito    = []
@@ -40,6 +48,8 @@ let enlace;
 let nombre;
 let precio;
 let descripsion;
+
+
 
 
 
@@ -155,78 +165,79 @@ function closeModal(){
 
 let productList = []
 productList.push({
-    name:"Red Bull Escala",
-    price:"320",
-    image:"./Mcia/RB22.png",
-    image2:"./Mcia/Lampara.png",
-    desc: ' Coleccionable 2022 campeón F1,'
+    name:"Cortina Blackout",
+    price:"390",
+    image:"./Mcia/Cortinas.png",
+    image2:"./Mcia/Cortinas2.png",
+    desc: 
+    'Incluye 2 paneles de cortinas opacas de 132cm x 214cm de largo. Tela de calidad sin forro que se siente suave y pesadaaDiseño práctico: Las cortinas bloquean entre el 90% y el 99% de la luz y los rayos UV (las cortinas de color oscuro funcionan bien). Reducción de ruido, mejor visión de la televisión gracias a la innovadora tecnología de triple tejido.'
+    
 })
 productList.push({
-    name:"Camiseta Deportiva",
-    price:"259",
-    image:"./Mcia/PlayeraRB.png",
-    image2:"./Mcia/Lampara.png",
-    desc: 'Camiseta deportiva de manga corta'
+    name:"Juego De Sabanas Matrimonial Tacto Suave",
+    price:"290",
+    image:"./Mcia/1Mat.png",
+    image2:"./Mcia/2Mat.png",
+    desc: 'Incluye:Sábana plana,Sábana de resorte fundas de almohada.Entendemos que estar cómodo en la cama es importante para crear un sueño nocturno agradable.Es por eso que creamos este juego de sábanas perfecto, súper suave, lujoso al tacto, fresco y transpirable para que puedas tener la mejor experiencia nocturna'
 })
 productList.push({
-    name:"Mercedes Benz Escala",
-    price:"420",
-    image:"./Mcia/Mercedes.png",
-    image2:"./Mcia/Lampara.png",
-    desc: 'Coleccionable Mercedes Benz'
+    name:"Set 2 Almohadas Ultra Suaves Transpirables Anti-bacterial",
+    price:"330",
+    image:"./Mcia/Almohada1.png",
+    image2:"./Mcia/Almohada2.png",
+    desc: 'Maxima Suavidad, Frescura y Comodidad'
 })
 productList.push({
-    name:" Lampara 3D F1",
-    price:"320",
-    image:"./Mcia/Lampara.png",
-    image2:"./Mcia/Lampara.png",
-    desc: 'Decoracion para la Havitacion'
+    name:"Pantalon Skinny De Gabardina Strech Para Hombre",
+    price:"390",
+    image:"./Mcia/Pantalon1.png",
+    image2:"./Mcia/Pantalon2.png",
+    desc: 'Fabricado con tela stretch de gabardina de alta calidad para mayor comodidad y resistencia. Un pantalón perfecto para toda ocasión.'
 })
 productList.push({
-    name:"Funda para Movil",
-    price:"159",
-    image:"./Mcia/Funda.png",
-    image2:"./Mcia/Lampara.png",
-    image2:"./Mcia/Lampara.png",
-    desc: 'iPhone 14, 13, 12, 11 Pro Max, Cup'
+    name:"Blusas de Manga Larga Casuales",
+    price:"250",
+    image:"./Mcia/Blusa1.png",
+    image2:"./Mcia/Blusa2.png",
+    desc: 'Diseño único con cuello en V, simple pero elegante. Apto para uso diario'
 })
 productList.push({
-    name:"Póster de arte de pared con efecto neón",
-    price:"299",
-    image:"./Mcia/Poster.png",
-    image2:"./Mcia/Lampara.png",
-    desc: 'Decoracion para sala de estar y dormitorio'
+    name:"Playera Casual Moda Tipo Polo",
+    price:"280",
+    image:"./Mcia/Polo1.png",
+    image2:"./Mcia/Polo2.png",
+    desc: 'Playera Cuello Tipo Polo, Increible estilo Manga Corta'
 })
 
 
 //lazy
 productList.push({
-    name:"Red Bull Escala",
+    name:"Juego Sábanas Individual Infantil 3pz Supersuave",
     price:"320",
-    image:"./Mcia/RB22.png",
-    image2:"./Mcia/Lampara.png",
-    desc: ' Coleccionable 2022 campeón F1,'
+    image:"./Mcia/SabanaIndividual.png",
+    image2:"./Mcia/SabanaIndividual2.png",
+    desc: 'incluye: 1 sábana plana de 168 x 244 cm, 1 sábana ajustable de 99 x 190 cm, 1 fundas de almohada de 50 x 75 cm. Sábana bajera ajustable de bolsillo profundo para colchón profundo de 35 a 40 cm, con un elástico alrededor de la sábana.'
 })
 productList.push({
-    name:"Camiseta Deportiva",
-    price:"259",
-    image:"./Mcia/PlayeraRB.png",
-    image2:"./Mcia/Lampara.png",
-    desc: 'Camiseta deportiva de manga corta'
+    name:"Cuadro Decorativo Con Luz (chivas De Guadalajara)",
+    price:"950",
+    image:"./Mcia/CuadroChivas.png",
+    image2:"./Mcia/CuadroChivas2.png",
+    desc: 'Decora tus espacios con esta bonita y original lámpara de pared “Chivas de Guadalajara” la cual llenara de color y luz tus lugares favoritos.'
 })
 productList.push({
-    name:"Mercedes Benz Escala",
-    price:"420",
-    image:"./Mcia/Mercedes.png",
-    image2:"./Mcia/Lampara.png",
-    desc: 'Coleccionable Mercedes Benz'
+    name:"Reloj Oficial Deportivo Chivas",
+    price:"290",
+    image:"./Mcia/Reloj.png",
+    image2:"./Mcia/Reloj2.png",
+    desc: '• Tipo: Reloj de pulso con estuche. Marca: chivas  Talla: Ajustable Adulto.  Tipo material: Metal con extensible de caucho.  Resistencia al agua: Resiste salpicaduras.'
 })
 productList.push({
-    name:" Lampara 3D F1",
-    price:"320",
-    image:"./Mcia/Lampara.png",
-    image2:"./Mcia/Lampara.png",
-    desc: 'Decoracion para la Havitacion'
+    name:"Toalla De Baño Microfibra 140 X 70cm + Toalla 75*35cm Set",
+    price:"270",
+    image:"./Mcia/Tollas.png",
+    image2:"./Mcia/Toallas2.png",
+    desc: 'Nuestro producto incluye 1 toalla de baño sobredimensionada de 70 x 140 cm y una toalla de 35 x 75 cm. '
 })
 productList.push({
     name:"Funda para Movil",
@@ -460,6 +471,10 @@ function renderListProduct(productList){
 
         });
 
+        
+
+        
+        
         btnPrev.addEventListener('click', function(){
             
             imgproductcard2.classList.add('bloqueo') ;
@@ -467,6 +482,13 @@ function renderListProduct(productList){
            
 
         });
+
+
+
+        //Carrusel Detail
+        
+
+        
 
         imgproductcard.addEventListener('click', function(){
             mostrarInfoProduct(product.image, product.image2, product.price, product.name, product.desc)
@@ -584,7 +606,8 @@ function agregarCarrito(producto){
 
 function mostrarInfoProduct(imagen, imagen2, precio, nombre, descripsion){
     
-   
+ 
+
 
     productImageInfor.setAttribute('src', imagen)
     productImage2Infor.setAttribute('src', imagen2)
@@ -602,6 +625,9 @@ function mostrarInfoProduct(imagen, imagen2, precio, nombre, descripsion){
         
        
     })
+
+    
+
 }
 
 
