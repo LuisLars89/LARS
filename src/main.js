@@ -175,7 +175,7 @@ productList.push({
 })
 productList.push({
     name:"Sneakers Botín Mario Bros Unisex",
-    price:"290",
+    price:"650",
     image:"./Mcia/Mario1.png",
     image2:"./Mcia/Mario3.png",
     desc: 'Zapato de corte textil. Forro textil transpirable. Suela sintética anti-derrapante. La talla 21, 22 y 23 puede salir con suela roja.'
