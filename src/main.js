@@ -174,11 +174,11 @@ productList.push({
     
 })
 productList.push({
-    name:"Juego De Sabanas Matrimonial Tacto Suave",
+    name:"Sneakers Botín Mario Bros Unisex",
     price:"290",
-    image:"./Mcia/1Mat.png",
-    image2:"./Mcia/2Mat.png",
-    desc: 'Incluye:Sábana plana,Sábana de resorte fundas de almohada.Entendemos que estar cómodo en la cama es importante para crear un sueño nocturno agradable.Es por eso que creamos este juego de sábanas perfecto, súper suave, lujoso al tacto, fresco y transpirable para que puedas tener la mejor experiencia nocturna'
+    image:"./Mcia/Mario1.png",
+    image2:"./Mcia/Mario3.png",
+    desc: 'Zapato de corte textil. Forro textil transpirable. Suela sintética anti-derrapante. La talla 21, 22 y 23 puede salir con suela roja.'
 })
 productList.push({
     name:"Set 2 Almohadas Ultra Suaves Transpirables Anti-bacterial",
@@ -548,10 +548,10 @@ renderListProduct(productList);
     img.src = enlace; // 'enlace' should be the URL of the image you want to print
   
     var logo = new Image();
-    logo.src = "./logos/BigLogo.png" // 'enlace' should be the URL of the image you want to print
+    logo.src = "./logos/VariedadesBigLogoo.png" // 'enlace' should be the URL of the image you want to print
 
     var pagos = new Image();
-    pagos.src = "./icons/Pagos.png" // 'enlace' should be the URL of the image you want to print
+    pagos.src = "./logos/Pagos.png" // 'enlace' should be the URL of the image you want to print
 
     
     // Wait for the image to load
